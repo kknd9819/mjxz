@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
+	default-lazy-init="true">
+	
+	
+	<!--&lt;!&ndash; 启动触发器的配置开始 &ndash;&gt;-->
+	<!--<bean id="myScheduler"-->
+		<!--class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+		<!--<property name="triggers">-->
+			<!--<list>-->
+				<!--<ref bean="autoGenerateSettlementJobTrigger" />-->
+			<!--</list>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+	<!---->
+	<!--<bean id="autoGenerateSettlementJobTrigger"-->
+		<!--class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+		<!--<property name="jobDetail">-->
+			<!--<ref bean="autoGenerateSettlementJobDetail" />-->
+		<!--</property>-->
+		<!--<property name="cronExpression">-->
+			<!--<value>0 15 0 * * ?</value>&lt;!&ndash; 每天0:15执行  0 15 0 * * ? &ndash;&gt;-->
+		<!--</property>-->
+	<!--</bean>-->
+	<!---->
+	<!--<bean id="autoGenerateSettlementJobDetail"-->
+		<!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+		<!--&lt;!&ndash;false表示等上一个任务执行完后再开启新的任务 &ndash;&gt;-->
+		<!--<property name="concurrent" value="false" />-->
+		<!--<property name="targetObject">-->
+			<!--<ref bean="autoGenerateSettlementJob" />-->
+		<!--</property>-->
+		<!--<property name="targetMethod">-->
+			<!--<value>work</value>-->
+		<!--</property>-->
+	<!--</bean>-->
+	
+	</beans>
